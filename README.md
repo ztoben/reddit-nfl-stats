@@ -1,29 +1,25 @@
 # reddit-nfl-stats
+Queries the reddit api on deploy and stores stats for all of the NFL subreddits.
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+Also make sure you have your `.env` file configured with the proper client, secret, username, and password.
+
+You can use the `.env.example` file as a template.
+
+Populate your stats file:
+
 ```
-npm run serve
+npm run local-stats
 ```
 
-### Compiles and minifies for production
+#### or
+
 ```
-npm run build
+npm run start
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+(Start will populate your stats before serving the files)
