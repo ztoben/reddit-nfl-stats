@@ -87,6 +87,11 @@ async function main() {
     if (a.subscribers > b.subscribers) return -1;
     if (a.subscribers < b.subscribers) return 1;
     return 0;
+  }).map((val, idx) => {
+    return {
+      ...val,
+      position: idx + 1
+    }
   });
 
   fs.writeFile(filePath, JSON.stringify(sortedJSON, null, 4), (err) => {

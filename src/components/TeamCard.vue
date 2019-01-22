@@ -4,7 +4,7 @@
     :style="{backgroundColor: determineColor(sub), color: sub.key_color}"
   >
     <div class="badge">
-      <p>#{{position + 1}}</p>
+      <p>#{{sub.position}}</p>
     </div>
     <img class="team-icon" v-if="sub.icon_img" :src="sub.icon_img" alt="logo" width="100">
     <div class="info-container">
@@ -30,9 +30,9 @@ export default {
       primary_color: String,
       subscribers: String,
       title: String,
-      url: String
-    },
-    position: Number
+      url: String,
+      position: Number
+    }
   },
   methods: {
     determineColor(sub) {
