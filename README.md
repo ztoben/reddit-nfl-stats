@@ -1,6 +1,10 @@
 # reddit-nfl-stats
 Queries the reddit api on deploy and stores stats for all of the NFL subreddits.
 
+Updates via a travis CI cron job every 24 hours.
+
+*View the live version [here](https://ztoben.github.io/reddit-nfl-stats/).*
+
 ## Project setup
 ```
 npm install
@@ -21,5 +25,3 @@ npm run local-stats
 ```
 npm run start
 ```
-
-(Start will populate your stats before serving the files)
