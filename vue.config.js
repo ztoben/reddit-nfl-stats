@@ -3,5 +3,5 @@ module.exports = {
     port: 9999,
     open: true
   },
-  publicPath: process.env.NODE_ENV === 'DEV' ? '/' : '/reddit-nfl-stats/'
+  publicPath: '/reddit-nfl-stats/'
 };

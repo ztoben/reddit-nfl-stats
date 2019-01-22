@@ -1,12 +1,12 @@
 <template>
   <div
     class="card"
-    :style="{backgroundColor: sub.banner_background_color || sub.primary_color, color: sub.key_color}"
+    :style="{backgroundColor: determineColor(sub), color: sub.key_color}"
   >
     <div class="badge">
       <p>#{{position + 1}}</p>
     </div>
-    <img v-if="sub.icon_img" :src="sub.icon_img" alt="logo" width="100">
+    <img class="team-icon" v-if="sub.icon_img" :src="sub.icon_img" alt="logo" width="100">
     <div class="info-container">
       <a :href="`https://reddit.com${sub.url}`">
         <h1>{{sub.display_name_prefixed}}</h1>
@@ -33,6 +33,44 @@ export default {
       url: String
     },
     position: Number
+  },
+  methods: {
+    determineColor(sub) {
+      const {
+        banner_background_color,
+        primary_color,
+        display_name_prefixed
+      } = sub;
+
+      switch (display_name_prefixed) {
+        case('r/steelers'):
+          return '#101820';
+        case('r/KansasCityChiefs'):
+          return '#FFB81C';
+        case('r/49ers'):
+          return '#B3995D';
+        case('r/Jaguars'):
+          return '#9F792C';
+        case('r/miamidolphins'):
+          return '#F26A24';
+        case('r/buccaneers'):
+          return '#FF7900';
+        case('r/LosAngelesRams'):
+          return '#0C243C';
+        case('r/nyjets'):
+          return '#27251F';
+        case('r/bengals'):
+          return '#000000';
+        case('r/Browns'):
+          return '#311D00';
+        case('r/detroitlions'):
+          return '#0076B6';
+        case('r/DenverBroncos'):
+          return '#FA5211';
+        default:
+          return banner_background_color || primary_color
+      }
+    }
   }
 }
 </script>
@@ -41,7 +79,6 @@ export default {
 <style lang="scss" scoped>
 .card {
   display: inline-flex;
-  min-width: 400px;
   height: 200px;
   border-radius: 15px;
   border: 2px solid black;
@@ -75,6 +112,25 @@ export default {
   .info-container {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .team-icon {
+    display: none;
+  }
+
+  .card {
+    min-width: 250px;
+  }
+}
+
+@media only screen and (min-width: 521px) {
+  .card {
+    min-width: 400px;
+  }
+
+  .info-container {
     text-align: left;
   }
 }
