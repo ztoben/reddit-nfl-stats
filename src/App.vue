@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <img class="logo" alt="NFL Reddit Logo" src="./assets/logo.png">
+    <h2>NFL Subreddit Subscriber Rank</h2>
     <input class="search" type="text" v-model="search" placeholder="Search..."/>
-    <div v-if="search === ''" class="card-container">
-      <TeamCard v-for="sub in subs" :key="sub.title" :sub="sub"/>
-    </div>
-    <div v-if="search !== ''" class="card-container">
-      <TeamCard v-for="sub in filterToSearchVal()" :key="sub.title" :sub="sub"/>
+    <label>
+      <input class="reverse" type="checkbox" v-model="reversed"/>
+      Reverse Order
+    </label>
+    <div class="card-container">
+      <TeamCard v-for="sub in filteredSubs()" :key="sub.title" :sub="sub"/>
     </div>
     <footer>
       <p>Created by <a href='https://github.com/ztoben'>ztoben</a>.</p>
@@ -33,16 +34,23 @@ export default {
   },
   data() {
     return {
-      subs: stats,
-      search: ''
+      stats,
+      search: '',
+      reversed: false
     }
   },
   methods: {
-    filterToSearchVal: function() {
-      return this.subs.filter(sub => {
+    filteredSubs: function() {
+      const stats = this.stats.filter(sub => {
         return searchContains(sub.display_name_prefixed, this.search)
           || searchContains(sub.title, this.search);
       });
+
+      if (this.reversed) {
+        return stats.reverse();
+      } else {
+        return stats;
+      }
     }
   }
 }
