@@ -42,7 +42,7 @@ async function main() {
     'cowboys',
     'NYGiants',
     'eagles',
-    'Redskins',
+    'washingtonNFL',
     'CHIBears',
     'GreenBayPackers',
     'detroitlions',
