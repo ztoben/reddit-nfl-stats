@@ -9,7 +9,7 @@
     "local-stats": "NODE_ENV=DEV node src/get_stats.js"
   },
   "dependencies": {
-    "snoowrap": "1.21.0",
+    "snoowrap": "1.22.0",
     "vue": "2.6.12"
   },
   "devDependencies": {
