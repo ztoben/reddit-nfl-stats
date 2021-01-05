@@ -26,7 +26,7 @@ async function main() {
     'DenverBroncos',
     'KansasCityChiefs',
     'Chargers',
-    'oaklandraiders',
+    'raiders',
     'Texans',
     'Colts',
     'Jaguars',
