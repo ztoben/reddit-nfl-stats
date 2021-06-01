@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "snoowrap": "1.23.0",
-    "vue": "2.6.12"
+    "vue": "2.6.13"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.5.13",
@@ -22,7 +22,7 @@
     "eslint-plugin-vue": "7.10.0",
     "node-sass": "6.0.0",
     "sass-loader": "10.1.1",
-    "vue-template-compiler": "2.6.12"
+    "vue-template-compiler": "2.6.13"
   },
   "eslintConfig": {
     "root": true,
